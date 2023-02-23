@@ -1,3 +1,5 @@
+// Classe Rastros
+// posição x, y e distancia
 
 namespace ProjetoPista
 {

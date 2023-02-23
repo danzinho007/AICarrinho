@@ -1,3 +1,7 @@
+// Programa Principal
+// Tudo Estático pois é um Projeto Console
+// Rastro = Rastrear a pista toda
+// Usar imagem tamanho 1617 x 1018
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -31,7 +35,7 @@ namespace ProjetoPista
             rastrear(primeiroRastro);
             rastrearTudo();
         }
-
+        
         static void rastrearTudo()
         {
             while(true)
@@ -70,6 +74,23 @@ namespace ProjetoPista
         }
 
         static void Adicionar(int x, int y, int pai)
+        {
+            if (y >= height) return;
+            if (x >= width) return;
+            if (y <= 0) return;
+            if (x <= 0) return;
+
+            Color c = mapaImg Img.GetPixel(x, y);
+            if (c.R <= 10 && c.G <= && c.B <= 10)
+            {
+                mapaImg.SetPixel(x, y, Color.Red);
+                Rastro novoRastro = new Rastro();
+                novoRastro.x = x;
+                novoRastro.y = y;
+                novoRastro.distancia = pai + 1;
+                rastros.Add(novoRastro);
+            }
+        }
 
     }
 }
